@@ -23,3 +23,7 @@ Por questões de confidencialidade, os dados utilizados aqui são fictícios, ma
 ## Resultado
 - Planilha pronta para importação no GPS
 - Lógica replicável para outros representantes ou cidades
+
+## Validação
+
+No cenário real, os dados foram validados por meio de comparação com o ERP, utilizando amostragem para garantir consistência entre os sistemas após a importação.
