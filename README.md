@@ -1,18 +1,25 @@
 # Projeto GPS Clientes
 
 ## Contexto
-Este projeto é uma simulação baseada em um problema real enfrentado em ambiente corporativo, envolvendo a preparação e padronização de dados de clientes para integração entre sistemas distintos.
+
+Este projeto simula um cenário real de integração de dados entre um ERP e um sistema de GPS, onde foi necessário preparar, padronizar e organizar uma base de clientes para importação, segmentando-os por carteira de vendedores e localização.
+
+O ERP não possuía todos os campos obrigatórios exigidos pela planilha de importação do sistema de GPS, sendo necessário realizar uma consulta no banco de dados para complementar essas informações e viabilizar a integração.
+
 Por questões de confidencialidade, os dados utilizados aqui são fictícios, mas a lógica aplicada reflete o cenário real, incluindo validações e reconciliação de dados.
 
-## Desafio
-- Sistemas diferentes sem identificador único universal
-- Necessidade de criar planilha pronta para importação
-- Reconciliação de campos textuais (razão social e fantasia)
+
+## Problema
+
+- Os dados precisavam ser importados via planilha
+- Os campos "razão social", "fantasia", "categoria" estavam inconsistentes
+- Base inicial foi criada incorretamente (campos invertidos)
 
 ## Solução
 - Extração de dados via SQL
 - Criação de planilha com campos obrigatórios
 - Categorização automática de clientes ativos e inativos
+- Uso de Excel (ÍNDICE + CORRESP) para reconciliação e ajuste dos dados antes da importação
 - Validação por amostragem (simulada nos dados fictícios)
 
 ## Como usar
@@ -23,6 +30,10 @@ Por questões de confidencialidade, os dados utilizados aqui são fictícios, ma
 ## Resultado
 - Planilha pronta para importação no GPS
 - Lógica replicável para outros representantes ou cidades
+
+## Decisão técnica
+
+Devido a inconsistências na base inicial (campos invertidos e dados incorretos), optou-se por remover os registros e realizar uma nova importação com os dados corrigidos, garantindo consistência desde a origem.
 
 ## Validação
 
